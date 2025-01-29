@@ -76,15 +76,30 @@ LIKE '%Toy Story%';
 ```
 
 2. Find all the movies directed by John Lasseter / Найдите все фильмы режиссера Джона Лассетера 
-```mysql
 
-```
 ```mysql
-
+SELECT * 
+FROM movies 
+WHERE director = 'John Lasseter'
 ```
+
+3. Find all the movies (and director) not directed by John Lasseter / Найдите все фильмы (и режиссера), снятые не Джоном Лассетером
+
 ```mysql
-
+SELECT Title, Director 
+FROM movies 
+WHERE Director != 'John Lasseter';
 ```
+
+4. Find all the WALL-* movies / Найдите все фильмы на СТЕНЕ-*
+```mysql
+SELECT Title 
+FROM movies 
+WHERE Title LIKE '%WALL%';
+```
+</details>
+
+
 ```mysql
 
 ```
