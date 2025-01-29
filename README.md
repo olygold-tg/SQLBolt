@@ -8,7 +8,6 @@
 ```mysql
 SELECT title FROM movies;
 ```
-</details>
 
 2. Find the director of each film / Найдите режиссера каждого фильма
    
