@@ -1,4 +1,5 @@
 # РЕШЕНИЕ ЗДАНЙ ИЗ ТРЕНАЖЕРА SQLBolt
+для помощи в решении можно ипользовать файл с 
 ## Урок SQL 1: ВЫБОР запросов 101
 <details> 
   <summary>Решение</summary>
@@ -52,12 +53,29 @@ WHERE year BETWEEN 2000 AND 2010
 SELECT * FROM movies
 WHERE year NOT BETWEEN 2000 AND 2010
 ```
-```mysql
 
-```
+4. Find the first 5 Pixar movies and their release year/ Найдите первые 5 фильмов Pixar и год их выхода
 ```mysql
-
+SELECT title, year 
+FROM movies 
+WHERE year <= 2003 
+LIMIT 5
 ```
+</details>
+
+## Урок 3 по SQL: Запросы с ограничениями (Стр. 2)
+<details> 
+  <summary>Решение</summary>
+
+1. Найдите все фильмы "Истории игрушек" / Найдите все фильмы из "Истории игрушек"
+  ```mysql
+SELECT * 
+FROM movies 
+WHERE Title 
+LIKE '%Toy Story%';
+```
+
+2. Find all the movies directed by John Lasseter / Найдите все фильмы режиссера Джона Лассетера 
 ```mysql
 
 ```
