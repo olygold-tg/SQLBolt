@@ -99,13 +99,44 @@ WHERE Title LIKE '%WALL%';
 ```
 </details>
 
-
+## Урок 4 по SQL: Урок 4 по SQL: Фильтрация и сортировка результатов запроса
+<details> 
+  <summary>Решение</summary>
+  
+1. List all directors of Pixar movies (alphabetically), without duplicates / Составьте список всех режиссеров фильмов Pixar (в алфавитном порядке), без дублирования
 ```mysql
-
+SELECT DISTINCT Director
+FROM movies
+ORDER BY Director
 ```
+
+2. List the last four Pixar movies released (ordered from most recent to least) / Перечислите последние четыре фильма Pixar, вышедшие на экраны (в порядке возрастания от последнего к последнему).
 ```mysql
-
+SELECT title
+FROM movies
+ORDER BY year DESC
+LIMIT 4
 ```
+
+3. List the first five Pixar movies sorted alphabetically / Перечислите первые пять фильмов Pixar, отсортированных в алфавитном порядке
+```mysql
+SELECT Title
+FROM movies
+ORDER BY Title ASC 
+LIMIT 5
+```
+
+4. List the next five Pixar movies sorted alphabetically / Перечислите следующие пять фильмов Pixar, отсортированных в алфавитном порядке
+```mysql
+SELECT Title
+FROM movies
+ORDER BY Title ASC 
+LIMIT 5
+OFFSET 5
+```
+
+
+
 
 ```mysql
 
