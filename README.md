@@ -170,8 +170,6 @@ LIMIT 2
 
 5. List the third and fourth largest cities (by population) in the United States and their population / Перечислите третий и четвертый по величине города (по численности населения) в Соединенных Штатах и их численность населения
 ```mysql
-C
-```
 SELECT city, population
 FROM north_american_cities
 WHERE country = 'United States'
@@ -179,14 +177,61 @@ ORDER BY population DESC
 LIMIT 2 OFFSET 2;
 ```
 
+## Урок 6 по SQL: Многостабличные запросы с объединениями
+<details> 
+  <summary>Решение</summary>
 
-
-
-
-
+1. Find the domestic and international sales for each movie / Найдите внутренние и международные продажи каждого фильма.
 ```mysql
-
+SELECT Title, domestic_sales, international_sales 
+FROM Movies
+INNER JOIN Boxoffice ON 
+boxoffice.movie_id = movies.id;
 ```
+
+2.Show the sales numbers for each movie that did better internationally rather than domestically / Покажите показатели продаж каждого фильма, который показал лучшие результаты на международном, а не на внутреннем рынке
+```mysql
+SELECT domestic_sales, international_sales, title
+FROM movies
+INNER JOIN boxoffice ON 
+boxoffice.movie_id = movies.id
+WHERE domestic_sales < international_sales
+```
+
+3. List all the movies by their ratings in descending order / Перечислите все фильмы по их рейтингам в порядке убывания
+```mysql
+SELECT title, rating
+FROM movies
+INNER JOIN boxoffice ON 
+boxoffice.movie_id = movies.id
+ORDER BY rating DESC
+```
+
+## Урок 7 по SQL: ВНЕШНИЕ соединения
+<details> 
+  <summary>Решение</summary>
+1. Find the list of all buildings that have employees / Найдите список всех зданий, в которых есть сотрудники
+  ```mysql
+SELECT DISTINCT building FROM employees LEFT JOIN Buildings ON employees.building = buildings.building_name
+```
+
+2. Find the list of all buildings and their capacity / Найдите список всех зданий и их вместимость
+```mysql
+SELECT DISTINCT building_name, capacity FROM buildings
+```
+
+3.List all buildings and the distinct employee roles in each building (including empty buildings) / Перечислите все здания и отдельные роли сотрудников в каждом здании (включая пустые здания).
+ ```mysql
+SELECT DISTINCT Building_name, Role FROM Buildings 
+ LEFT JOIN Employees ON Building_name = Building;
+```
+
+
+
+
+
+
+
 ```mysql
 
 ```
