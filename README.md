@@ -216,7 +216,8 @@ ORDER BY rating DESC
 <details> 
   <summary>Решение</summary>
 1. Find the list of all buildings that have employees / Найдите список всех зданий, в которых есть сотрудники
- ```mysql
+
+```mysql
 SELECT DISTINCT building FROM employees LEFT JOIN Buildings ON employees.building = buildings.building_name
 ```
 
