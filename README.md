@@ -134,6 +134,8 @@ ORDER BY Title ASC
 LIMIT 5
 OFFSET 5
 ```
+</details>
+
 ## Обзор SQL: Простые запросы ВЫБОРА
 <details> 
   <summary>Решение</summary>
@@ -177,6 +179,8 @@ ORDER BY population DESC
 LIMIT 2 OFFSET 2;
 ```
 
+</details>
+
 ## Урок 6 по SQL: Многостабличные запросы с объединениями
 <details> 
   <summary>Решение</summary>
@@ -206,6 +210,7 @@ INNER JOIN boxoffice ON
 boxoffice.movie_id = movies.id
 ORDER BY rating DESC
 ```
+</details>
 
 ## Урок 7 по SQL: ВНЕШНИЕ соединения
 <details> 
@@ -225,7 +230,7 @@ SELECT DISTINCT building_name, capacity FROM buildings
 SELECT DISTINCT Building_name, Role FROM Buildings 
  LEFT JOIN Employees ON Building_name = Building;
 ```
-
+</details>
 
 
 
